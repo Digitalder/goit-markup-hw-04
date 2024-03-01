@@ -112,7 +112,6 @@ img {
 .address {
     font-style: normal;
     margin-left: auto;
-    transition: color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-list {
@@ -125,7 +124,7 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
-    
+    transition: color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -410,6 +409,11 @@ img {
     align-items: baseline;
     column-gap: 120px;
 }
+
+.ooter-section-logo {
+    margin-right: 120px;
+}
+
 
 .logo-footer {
     font-family: "Raleway", sans-serif;
