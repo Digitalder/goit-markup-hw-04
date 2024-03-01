@@ -75,6 +75,7 @@ img {
     gap: 40px;
 }
 
+
 .nav-link {
     font-weight: 500;
     font-size: 16px;
@@ -83,11 +84,28 @@ img {
     color: #2e2f42;
     padding: 24px 0;
     display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
 .nav-link:focus {
     color: #404bbf;
+}
+
+.current {
+    position: relative;
+    color: #404bbf;
+}
+
+.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    background-color: #404bbf;
+    border-radius: 2px;
+    height: 4px;
+    width: 100%;
 }
 
 .address {
@@ -105,6 +123,7 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -114,9 +133,14 @@ img {
 
 
 .hero-section {
-    background: #2e2f42; 
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.4) ,rgba(46, 47, 66, 0.4)), url("../images/hero/people-office.jpg");
+    background-size: cover;
+    background-color: #2e2f42;
     padding-top: 188px;
-    padding-bottom: 188px;
+    padding-bottom: 188px;  
 }
 
 
@@ -183,6 +207,18 @@ img {
 
 .benefits-item {
     width: calc((100% - 3 * 24px) / 4);
+}
+
+.benefits-item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #8e8f99;
+    height: 112px;
+    border-radius: 4px;
+    background-color: #f4f4fd;
+    margin-bottom: 8px;
+    fill: none;
 }
 
 .benefits-name {
@@ -252,6 +288,30 @@ img {
     text-align: center;
 }
 
+.social-list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding-top: 8px;
+}
+
+.social-list-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4D5AE5;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: white;
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+    background: #31d0aa;
+}
+
 .portfolio-section {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -279,8 +339,15 @@ img {
 .portfolio-item {
     width: calc((100% - 2 * 24px) / 3);
     
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    background-color: #fff;
+    
 }
 
+.overlay-for-image {
+  position: relative;
+  overflow: hidden;
+}
 
 
 .container-name-portfolio {
@@ -308,10 +375,38 @@ img {
     margin-bottom: 32px;
 }
 
+.portfolio-overlay {
+   position: absolute; 
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #4d5ae5;
+   transform: translateY(100%);
+   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   padding: 40px 32px;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0%); 
+}
+
+ .portfolio-overlay-text {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+ }
+
 .section-footer {
     background: #2e2f42;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 0;
+}
+
+.footer-container {
+    display: flex;
+    align-items: baseline;
+    column-gap: 120px;
 }
 
 .logo-footer {
@@ -344,4 +439,46 @@ img {
     letter-spacing: 0.02em;
     color: #f4f4fd;
     max-width: 264px;
+}
+
+.footer-social-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.footer-social-list {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social-item {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-icon {
+    fill: #f4f4fd;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: #31d0aa;
 }
